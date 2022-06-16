@@ -1,17 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   const links = [
     {
       id: 1,
-      path: "/",
-      text: "Books",
+      path: '/',
+      text: 'Books',
     },
     {
       id: 2,
-      path: "/categories",
-      text: "Categories",
+      path: '/categories',
+      text: 'Categories',
     },
   ];
 
