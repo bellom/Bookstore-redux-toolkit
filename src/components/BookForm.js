@@ -46,15 +46,16 @@ const BookForm = () => {
   };
 
   return (
-    <div>
-      <h2> Form to Add New Book</h2>
+    <div className="py-10 bg-[#fafafa]">
+      <h2 className="uppercase opacity-50 text-[1.25rem] mb-5">Add new book</h2>
 
-      <form className="form" id="bookForm">
+      <form className="flex justify-between" id="bookForm">
         <input
           type="text"
           name="title"
           placeholder="Book Name"
           onChange={handleChange}
+          className="h-[2.8rem] w-[25rem] mb-5 pl-5"
           required
         />
         <input
@@ -63,6 +64,7 @@ const BookForm = () => {
           id="author"
           placeholder="Author"
           onChange={handleChange}
+          className="h-[2.8rem] w-[25rem] mb-5 pl-5"
           required
         />
         <select
@@ -70,13 +72,14 @@ const BookForm = () => {
           name="category"
           onChange={handleChange}
           placeholder="Category"
+          className="h-[2.8rem] w-[15rem] mb-5 pl-5"
           required
         >
           {dropdownOptions}
         </select>
 
-        <button type="submit" onClick={handleSubmit}>
-          Add a Book
+        <button type="submit" onClick={handleSubmit} className="uppercase bg-[#0290ff] w-[11.5rem] h-[2.8rem] text-white">
+          Add Book
         </button>
       </form>
     </div>

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import BookForm from './BookForm';
 import Book from './Book';
 import { booksSelector, getBooks } from '../redux/books/books';
 
@@ -27,11 +26,10 @@ const BookList = () => {
   };
 
   return (
-    <div className="bg-[#fafafa] mt-[2.5rem]">
+    <div className="bg-[#fafafa] mt-[2.5rem] pb-[2.5rem] border-b-2 max-h-[60vh] overflow-y-scroll">
       <div className="flex flex-col gap-[1rem]">
         {books ? listify(books) : 'Loading...'}
       </div>
-      <BookForm />
     </div>
   );
 };
