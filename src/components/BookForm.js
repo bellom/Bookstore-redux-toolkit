@@ -8,7 +8,7 @@ const BookForm = () => {
     title: '',
     author: '',
     category: 'Action',
-    id: Math.floor(Math.random() * 1000),
+    item_id: Math.floor(Math.random() * 1000),
   });
   const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
   const dropdownOptions = categories.map((category) => (
@@ -33,7 +33,7 @@ const BookForm = () => {
       title: '',
       author: '',
       category: 'Action',
-      id: Math.floor(Math.random() * 100),
+      item_id: Math.floor(Math.random() * 100),
     });
     document.getElementById('bookForm').reset();
   };
