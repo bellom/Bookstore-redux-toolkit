@@ -1,23 +1,29 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import BookForm from './BookForm';
 import Book from './Book';
+import { booksSelector, getBooks } from '../redux/books/books';
 
 const BookList = () => {
-  const books = useSelector((state) => state.books);
-  const listify = (books) => books.map((book) => (
+  const dispatch = useDispatch();
+  const state = useSelector(booksSelector);
+  const books = state.books[0];
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
+  const listify = (books) => Object.keys(books).length > 0 ? Object.keys(books).map((key) => (
     <Book
-      title={book.title}
-      author={book.author}
-      id={book.id}
-      key={book.id}
+      key={key}
+      title={books[key][0].title}
+      author={books[key][0].author}
+      id={key}
     />
-  ));
+  )): <p>No books to display</p>;
   return (
     <div>
       <h1>List of Books</h1>
       <div className="book-list">
-        {listify(books)}
+        {books ? listify(books) : 'Loading...'}
       </div>
       <BookForm />
     </div>
