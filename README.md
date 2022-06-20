@@ -23,7 +23,7 @@ With the help of this app, the user can do the following:
 
 ## Live Demo
 
-[Live Demo Link - coming soon](#)
+[Live Demo Link](https://bookstore-redux-toolkit.netlify.app/)
 
 ## Getting Started
 
