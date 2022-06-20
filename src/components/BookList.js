@@ -11,14 +11,20 @@ const BookList = () => {
   useEffect(() => {
     dispatch(getBooks());
   }, []);
-  const listify = (books) => Object.keys(books).length > 0 ? Object.keys(books).map((key) => (
-    <Book
-      key={key}
-      title={books[key][0].title}
-      author={books[key][0].author}
-      id={key}
-    />
-  )): <p>No books to display</p>;
+  const listify = (books) => {
+    if (Object.keys(books).length > 0) {
+      return Object.keys(books).map((key) => (
+        <Book
+          key={key}
+          title={books[key][0].title}
+          author={books[key][0].author}
+          id={key}
+        />
+      ));
+    }
+    return <p>No books to display</p>;
+  };
+
   return (
     <div>
       <h1>List of Books</h1>
