@@ -42,7 +42,7 @@ const Nav = () => {
           </ul>
         </div>
       </nav>
-      <span className="ml-auto p-2 border border-gray-200 rounded-full">
+      <span className="ml-auto p-2 border border-gray-200 rounded-full cursor-pointer">
         <FaUserAlt className="text-[#0290ff]" />
       </span>
     </header>

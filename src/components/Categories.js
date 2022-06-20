@@ -10,9 +10,15 @@ const Categories = () => {
   };
 
   return (
-    <div>
+    <div className="bg-[#fafafa] mt-[2.5rem] pb-[2.5rem]">
       {status}
-      <button className="btn-check-status" type="button" onClick={() => handleCheckStatus()}>Check Status</button>
+      <button
+        className="text-[2rem] font-bold"
+        type="button"
+        onClick={() => handleCheckStatus()}
+      >
+        Check Status
+      </button>
     </div>
   );
 };
