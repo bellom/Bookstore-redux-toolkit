@@ -7,15 +7,20 @@ const BookForm = () => {
   const [newBook, setNewBook] = useState({
     title: '',
     author: '',
-    category: 'Action',
+    category: 'action',
     item_id: Math.floor(Math.random() * 1000),
   });
-  const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+  const categories = [
+    'Action',
+    'Biography',
+    'History',
+    'Horror',
+    'Kids',
+    'Learning',
+    'Sci-Fi',
+  ];
   const dropdownOptions = categories.map((category) => (
-    <option
-      key={categories.indexOf(category)}
-      value={category}
-    >
+    <option key={categories.indexOf(category)} value={category}>
       {category}
     </option>
   ));
@@ -28,28 +33,54 @@ const BookForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addBook(newBook));
+    if (newBook.title && newBook.author && newBook.category) {
+      dispatch(addBook(newBook));
+    }
     setNewBook({
       title: '',
       author: '',
-      category: 'Action',
+      category: 'action',
       item_id: Math.floor(Math.random() * 100),
     });
     document.getElementById('bookForm').reset();
   };
 
   return (
-    <div>
-      <h2> Form to Add New Book</h2>
+    <div className="py-10 bg-[#fafafa]">
+      <h2 className="uppercase opacity-50 text-[1.25rem] mb-5">Add new book</h2>
 
-      <form className="form" id="bookForm">
-        <input type="text" name="title" placeholder="Book Name" onChange={handleChange} />
-        <select id="categories" name="category" onChange={handleChange}>
+      <form className="flex justify-between" id="bookForm">
+        <input
+          type="text"
+          name="title"
+          placeholder="Book Name"
+          onChange={handleChange}
+          className="h-[2.8rem] w-[25rem] mb-5 pl-5"
+          required
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Author"
+          onChange={handleChange}
+          className="h-[2.8rem] w-[25rem] mb-5 pl-5"
+          required
+        />
+        <select
+          id="categories"
+          name="category"
+          onChange={handleChange}
+          placeholder="Category"
+          className="h-[2.8rem] w-[15rem] mb-5 pl-5"
+          required
+        >
           {dropdownOptions}
         </select>
-        <input type="text" name="author" id="author" placeholder="Author" onChange={handleChange} />
 
-        <button type="submit" onClick={handleSubmit}>Add a Book</button>
+        <button type="submit" onClick={handleSubmit} className="uppercase bg-[#0290ff] w-[11.5rem] h-[2.8rem] text-white">
+          Add Book
+        </button>
       </form>
     </div>
   );
