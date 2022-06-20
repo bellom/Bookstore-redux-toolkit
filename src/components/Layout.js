@@ -2,9 +2,9 @@ import { Outlet } from 'react-router-dom';
 import Nav from './Nav';
 
 const Layout = () => (
-  <div>
+  <div className="bg-[#fafafa] h-[100vh]">
     <Nav />
-    <div className="mx-[6.25rem]">
+    <div className="mx-[6.25rem] bg-white">
       <Outlet />
     </div>
   </div>

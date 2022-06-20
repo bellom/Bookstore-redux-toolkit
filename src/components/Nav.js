@@ -19,7 +19,7 @@ const Nav = () => {
   const { pathname } = useLocation();
 
   return (
-    <header className="bg-white mx-[6.25rem] h-[5.938rem] flex items-center">
+    <header className="bg-white px-[6.25rem] h-[5.938rem] flex items-center">
       <nav>
         <div className="flex items-center gap-10">
           <h1 className="text-3xl text-[#0290ff] font-bold">
