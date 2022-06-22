@@ -19,7 +19,7 @@ With the help of this app, the user can do the following:
 
 - Major languages: JavaScript, HTML & CSS;
 - Libraries: React, TailwindCSS;
-- Technologies used: GitHub, GitFlow, Terminal;
+- Technologies used: GitHub, GitFlow, Netlify;
 
 ## Live Demo
 
