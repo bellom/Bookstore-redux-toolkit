@@ -11,14 +11,14 @@ const Categories = () => {
 
   return (
     <div className="bg-[#fafafa] mt-[2.5rem] pb-[2.5rem]">
-      {status}
       <button
-        className="text-[2rem] font-bold"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         type="button"
         onClick={() => handleCheckStatus()}
       >
         Check Status
       </button>
+      <div className="text-[2rem] font-bold mt-8">{status}</div>
     </div>
   );
 };

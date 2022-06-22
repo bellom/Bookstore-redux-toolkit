@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
 const BookForm = () => {
+  const ref = useRef(null);
   const dispatch = useDispatch();
   const [newBook, setNewBook] = useState({
     title: '',
     author: '',
-    category: 'action',
+    category: 'Action',
     item_id: Math.floor(Math.random() * 1000),
   });
   const categories = [
@@ -39,17 +40,18 @@ const BookForm = () => {
     setNewBook({
       title: '',
       author: '',
-      category: 'action',
+      category: 'Action',
       item_id: Math.floor(Math.random() * 100),
     });
-    document.getElementById('bookForm').reset();
+    const bookForm = ref.current;
+    bookForm.reset();
   };
 
   return (
     <div className="py-10 bg-[#fafafa]">
       <h2 className="uppercase opacity-50 text-[1.25rem] mb-5">Add new book</h2>
 
-      <form className="flex justify-between" id="bookForm">
+      <form ref={ref} className="flex justify-between" id="bookForm">
         <input
           type="text"
           name="title"
